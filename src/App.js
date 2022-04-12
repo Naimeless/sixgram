@@ -1,10 +1,12 @@
 import React from 'react';
-import '../css/App.css';
+import './style/App.css'
+import News from './pages/news/News.js';
+
 
 function App() {
   return (
-    <div className="App">
-
+    <div>
+      <News />
     </div>
   );
 }
