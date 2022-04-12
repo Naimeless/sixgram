@@ -7,6 +7,7 @@ import { faImages } from '@fortawesome/free-regular-svg-icons';
 import { faComments } from '@fortawesome/free-regular-svg-icons';
 import { faBarChart } from '@fortawesome/free-regular-svg-icons';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { Routes, Route, Link } from 'react-router-dom'
 import "../header/Header.css";
 
 function NewsHeader(){
@@ -24,7 +25,7 @@ function NewsHeader(){
                 <div className="iconDiv"><FontAwesomeIcon className="iconHeader" icon={faComments} /></div>
                 <div className="iconDiv"><FontAwesomeIcon className="iconHeader" icon={faImages} /></div>
                 <div className="iconDiv"><FontAwesomeIcon className="iconHeader" icon={faBell} /></div>
-                <div className="iconDiv"><FontAwesomeIcon className="iconHeader" icon={faUser} /></div>
+                <Link to= "/profile" className="iconDiv"><FontAwesomeIcon className="iconHeader" icon={faUser} /></Link>
             </div>
         </div>
     )

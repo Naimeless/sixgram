@@ -1,13 +1,19 @@
 import React from 'react';
 import './style/App.css'
-import News from './pages/news/News.js';
+import News from './pages/news/News';
+import Profile from './pages/profile/Profile';
+
+import { Routes, Route, Link } from 'react-router-dom'
 
 
 function App() {
   return (
-    <div>
-      <News />
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<News />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </>
   );
 }
 
