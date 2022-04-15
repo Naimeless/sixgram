@@ -21,7 +21,7 @@ function NewsHeader(){
                 </button>
             </div>
             <div className="icon">
-                <div className="iconDiv"><FontAwesomeIcon className="iconHeader" icon={faBarChart} /></div>
+                <Link to="/" className="iconDiv"><FontAwesomeIcon className="iconHeader" icon={faBarChart} /></Link>
                 <div className="iconDiv"><FontAwesomeIcon className="iconHeader" icon={faComments} /></div>
                 <div className="iconDiv"><FontAwesomeIcon className="iconHeader" icon={faImages} /></div>
                 <div className="iconDiv"><FontAwesomeIcon className="iconHeader" icon={faBell} /></div>

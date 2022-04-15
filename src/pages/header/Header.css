@@ -27,6 +27,7 @@
     justify-content: space-between;
     margin-left: auto;
     
+
     height: 5rem;
     width: 18rem;
     margin-right: 5rem;
@@ -42,6 +43,8 @@
 .iconDiv{
     display: flex;
     align-items: center;
+    color: #000 !important;
+    text-decoration: none;
 }
 
 /* блок поиска */
