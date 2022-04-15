@@ -1,0 +1,111 @@
+
+/* основной */
+.div-news{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* для новостей */
+.news-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+
+    width: 50rem;
+    height: 41rem;
+    margin: 5rem;
+    
+    border: 1px solid;
+    border-color: rgb(189, 189, 189);
+}
+
+/* блок иконки */
+.icon-block{
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+/* сама иконка */
+.icon-user{
+    width: 20px;
+    height: 20px;
+}
+
+/* блок фото */
+.photo-block{
+    height: 35rem;
+    width: 50rem;
+}
+
+/* блок юзера */
+.user-block{
+    display: flex;
+    align-items: center;
+
+    width: 50rem;
+    height: 3rem;
+}
+
+/* имя аккаунта */
+.name-user-block{
+    font-size: 20px;
+    font-family: system-ui;
+    margin-left: 1rem;
+}
+
+/* блок отметок */
+.marks-block{
+    display: flex;
+    align-items: center;
+
+    width: 50rem;
+    height: 3rem;
+}
+
+/* для отметок */
+.marks{
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+
+    font-size: 20px;
+    font-family: system-ui;
+}
+
+.div-marks{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.button-like{
+    display: flex;
+    align-items: center;
+
+    height: 3rem;
+    width: 3rem;
+    border: 0;
+    background-color: #ffffff;
+}
+
+.icon-button{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.button-comment{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    height: 3rem;
+    width: 3rem;
+    border: 0;
+    background-color: #ffffff;
+}

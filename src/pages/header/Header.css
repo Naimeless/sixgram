@@ -1,0 +1,78 @@
+
+/* вся шапка */
+.hat{
+    background-color: #e0e0e0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border-bottom: 1px solid;
+    border-color: rgb(189, 189, 189);
+    box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .2);
+
+    height: 5rem;
+}
+
+/* заголовок */
+.header-title{
+    width: 175px;
+    height: 30px;
+    margin-left: 5rem;
+}
+
+/* блок иконок */
+.icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: auto;
+    
+    height: 5rem;
+    width: 18rem;
+    margin-right: 5rem;
+}
+
+/* иконка */
+.icon-header{
+    height: 30px;
+    width: 30px;
+}
+
+/* для каждого дива */
+.icon-div{
+    display: flex;
+    align-items: center;
+    color: #000 !important;
+    text-decoration: none;
+}
+
+/* блок поиска */
+.div-search{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    justify-content: flex-end;
+
+    height: 2rem;
+    width: 57.5rem;
+}
+
+/* поиск */
+.search{
+    height: 2rem;
+    width: 22rem;
+    padding-left: 10px;
+
+    border: 1px solid;
+    border-color: rgb(189, 189, 189);
+    outline: none;
+}
+
+.search-button{
+    height: 2.3rem;
+    width: 2rem;
+
+    border: 1px solid;
+    border-color: rgb(189, 189, 189);
+    cursor: pointer;
+}
