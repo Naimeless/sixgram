@@ -1,0 +1,68 @@
+body{
+    background-color: rgb(250, 244, 248);
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+}
+
+.imgg{
+    display: flex;
+    height: 1.5rem;
+}
+
+.hh{
+    display: flex;
+    width: 18rem;
+    justify-content: space-between;
+}
+
+.iii{
+    margin: 1rem;
+    width: 20rem;
+    height: 20rem;
+}
+
+.profile{
+    display: flex;
+    height: 29rem;
+    justify-content: center;
+    margin: 2rem;
+    border-bottom: 2px solid rgb(207, 207, 207);
+}
+
+.photo{
+    display: flex;
+    height: 25rem;
+}
+
+.information{
+    width: 22rem;
+    margin-left: 3rem;
+}
+
+.user{
+    height: 25rem;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.photos{
+    margin: 1rem 0px 0.5rem 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.lenta{
+    display: flex;
+    height: 13rem;
+}
+
+.images{
+    display: flex;
+    flex-direction: column;
+  
+}
