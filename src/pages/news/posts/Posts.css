@@ -9,103 +9,126 @@
 
 /* для новостей */
 .news-block{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-
-    width: 50rem;
-    height: 41rem;
     margin: 5rem;
-    
-    border: 1px solid;
-    border-color: rgb(189, 189, 189);
 }
 
-/* блок иконки */
-.icon-block{
-    margin-left: 1rem;
-    display: flex;
-    align-items: center;
-}
+    /* для постов */
+    .news-block__basic{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
 
-/* сама иконка */
-.icon-user{
-    width: 20px;
-    height: 20px;
-}
+        width: 50rem;
+        height: 41rem;
+        
+        border: 1px solid;
+        border-color: rgb(189, 189, 189);
+    }
 
-/* блок фото */
-.photo-block{
-    height: 35rem;
-    width: 50rem;
-}
+        /* блок юзера */
+        .news-block__basic-user{
+            display: flex;
+            align-items: center;
 
-/* блок юзера */
-.user-block{
-    display: flex;
-    align-items: center;
+            width: 50rem;
+            height: 3rem;
+        }
 
-    width: 50rem;
-    height: 3rem;
-}
+            /* блок иконки юзера*/
+            .news-block__basic-user-icon{
+                margin-left: 1rem;
+                display: flex;
+                align-items: center;
+            }
 
-/* имя аккаунта */
-.name-user-block{
-    font-size: 20px;
-    font-family: system-ui;
-    margin-left: 1rem;
-}
+                /* размеры иконки */
+                .news-block__basic-user-icon-picture{
+                    width: 20px;
+                    height: 20px;
+                }
 
-/* блок отметок */
-.marks-block{
-    display: flex;
-    align-items: center;
+            /* имя аккаунта */
+            .news-block__basic-user-name{
+                font-size: 20px;
+                font-family: system-ui;
+                margin-left: 1rem;
+            }
 
-    width: 50rem;
-    height: 3rem;
-}
+        /* блок фото */
+        .photo-block{
+            height: 35rem;
+            width: 50rem;
+        }
 
-/* для отметок */
-.marks{
-    margin-left: 1rem;
-    display: flex;
-    align-items: center;
 
-    font-size: 20px;
-    font-family: system-ui;
-}
+        /* блок отметок */
+        .marks-block{
+            display: flex;
+            align-items: center;
 
-.div-marks{
-    height: 3rem;
-    display: flex;
-    align-items: center;
-}
+            width: 50rem;
+            height: 3rem;
+        }
 
-.button-like{
-    display: flex;
-    align-items: center;
+            .marks-block__div{
+                height: 3rem;
+                display: flex;
+                align-items: center;
+            }
 
-    height: 3rem;
-    width: 3rem;
-    border: 0;
-    background-color: #ffffff;
-}
+                /* вид отметок */
+                .marks-block__div-icon{
+                    margin-left: 1rem;
+                    display: flex;
+                    align-items: center;
 
-.icon-button{
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-}
+                    font-size: 20px;
+                    font-family: system-ui;
+            }
 
-.button-comment{
-    display: flex;
-    align-items: center;
-    margin-left: auto;
+            /* кнопка для коментариев */
+            .marks-block__button-comments{
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+                
+                height: 3rem;
+                width: 3rem;
+                border: 0;
+                background-color: #ffffff;
+            }
 
-    height: 3rem;
-    width: 3rem;
-    border: 0;
-    background-color: #ffffff;
-}
+            /* кнопка для лайка */
+            .marks-block__button-likes{
+                display: flex;
+                align-items: center;
+                
+                height: 3rem;
+                width: 3rem;
+                border: 0;
+                background-color: #ffffff;
+            }
+
+                /* вид кнопок */
+                .marks-block__button-icon{
+                    width: 25px;
+                    height: 25px;
+                    cursor: pointer;
+                }
+
+    /* блок времени публикации */
+    .time-block{
+        display: flex;
+                
+        width: 50rem;
+        margin-left: 1rem;
+    }
+
+        /* внешний вид */
+        .time-block__post{
+            color: #535353;
+            font-family: system-ui;
+            font-size: 15px;
+        }

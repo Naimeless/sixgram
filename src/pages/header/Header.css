@@ -1,6 +1,6 @@
 
-/* вся шапка */
-.hat{
+/* главный блок шапки */
+.block-header{
     background-color: #e0e0e0;
     display: flex;
     flex-direction: row;
@@ -13,66 +13,67 @@
     height: 5rem;
 }
 
-/* заголовок */
-.header-title{
-    width: 175px;
-    height: 30px;
-    margin-left: 5rem;
-}
+    /* заголовок шапки */
+    .block-header__title{
+        width: 175px;
+        height: 30px;
+        margin-left: 5rem;
+    }
 
-/* блок иконок */
-.icon{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left: auto;
-    
-    height: 5rem;
-    width: 18rem;
-    margin-right: 5rem;
-}
+    /* блок поиска */
+    .div-search{
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        justify-content: flex-end;
 
-/* иконка */
-.icon-header{
-    height: 30px;
-    width: 30px;
-}
+        height: 2rem;
+        width: 57.5rem;
+    }
 
-/* для каждого дива */
-.icon-div{
-    display: flex;
-    align-items: center;
-    color: #000 !important;
-    text-decoration: none;
-}
+        /* сам поиск */
+        .div-search__input{
+            height: 2rem;
+            width: 22rem;
+            padding-left: 10px;
 
-/* блок поиска */
-.div-search{
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    justify-content: flex-end;
+            border: 1px solid;
+            border-color: rgb(189, 189, 189);
+            outline: none;
+        }
 
-    height: 2rem;
-    width: 57.5rem;
-}
+        /* кнопка поиска */
+        .div-search__button{
+            height: 2.3rem;
+            width: 2rem;
+        
+            border: 1px solid;
+            border-color: rgb(189, 189, 189);
+            cursor: pointer;
+        }
 
-/* поиск */
-.search{
-    height: 2rem;
-    width: 22rem;
-    padding-left: 10px;
+    /* блок иконок */
+    .block-icon{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: auto;
+        
+        height: 5rem;
+        width: 18rem;
+        margin-right: 5rem;
+    }
 
-    border: 1px solid;
-    border-color: rgb(189, 189, 189);
-    outline: none;
-}
+        /* для каждой иконки */
+        .block-icon__div{
+            display: flex;
+            align-items: center;
+            color: #000 !important;
+            text-decoration: none;
+        }
 
-.search-button{
-    height: 2.3rem;
-    width: 2rem;
-
-    border: 1px solid;
-    border-color: rgb(189, 189, 189);
-    cursor: pointer;
-}
+            /* размер иконок */
+            .block-icon__div-size{
+                height: 30px;
+                width: 30px;
+            }

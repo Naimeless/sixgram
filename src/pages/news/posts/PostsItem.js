@@ -16,30 +16,35 @@ export const PostsItem =({
 
     return(
         <div className="news-block">
-            <div className="user-block">
-                <div className="icon-block">
-                    <FontAwesomeIcon className="icon-user" icon={faUser} />
+            <div className="news-block__basic">
+                <div className="news-block__basic-user">
+                    <div className="news-block__basic-user-icon">
+                        <FontAwesomeIcon className="news-block__basic-user-icon-picture" icon={faUser} />
+                    </div>
+                    <div className="news-block__basic-user-name">
+                        {user}
+                    </div>
                 </div>
-                <div className="name-user-block">
-                    {user}
+                <div className="photo-block">
+                    <img className="photo-block" src={ photo }/>
+                </div>
+                <div className="marks-block">
+                    <div className="marks-block__div">
+                        <div className="marks-block__div-icon">likes:</div>
+                    </div>
+                    <div className="marks-block__div">
+                        <p className="marks-block__div-icon">comments:</p>
+                    </div>
+                    <div className="marks-block__button-comments">
+                        <FontAwesomeIcon className="marks-block__button-icon" icon={faComment} />
+                    </div>
+                    <div className="marks-block__button-likes">
+                        <FontAwesomeIcon onClick={likePost} style={{color: heartFill}} className="marks-block__button-icon" icon={faHeart} /> 
+                    </div>
                 </div>
             </div>
-            <div className="photo-block">
-                <img className="photo-block" src={ photo }/>
-            </div>
-            <div className="marks-block">
-                <div className="div-marks">
-                    <div className="marks">likes:</div>
-                </div>
-                <div className="div-marks">
-                    <p className="marks">comments:</p>
-                </div>
-                <div className="button-comment">
-                    <FontAwesomeIcon className="icon-button" icon={faComment} />
-                </div>
-                <div className="button-like">
-                    <FontAwesomeIcon onClick={likePost} style={{color: heartFill}} className="icon-button" icon={faHeart} /> 
-                </div>
+            <div className="time-block">
+                <p className="time-block__post">April 20, 2022</p>
             </div>
         </div>
     )

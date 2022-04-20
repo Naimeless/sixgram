@@ -1,5 +1,5 @@
 import React from 'react';
-import './style/App.css'
+import './style/App.css';
 import News from './pages/news/News';
 import Profile from './pages/profile/Profile';
 
