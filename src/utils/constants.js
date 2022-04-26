@@ -3,12 +3,12 @@ import Photo2 from "../pages/news/posts/photo/photo2.jpg";
 import Photo3 from "../pages/news/posts/photo/photo3.jpg";
 import Photo4 from "../pages/news/posts/photo/photo4.jpg";
 
-import PhotoM from '../pages/profile/photo/1.jpg';
-import PhotoA from '../pages/profile/photo/2.jpg';
-import PhotoS from '../pages/profile/photo/3.jpg';
-import PhotoF from '../pages/profile/photo/4.jpg';
-import PhotoG from '../pages/profile/photo/5.jpg';
-import PhotoV from '../pages/profile/photo/6.jpg';
+import Photo5 from '../pages/profile/photo/1.jpg';
+import Photo6 from '../pages/profile/photo/2.jpg';
+import Photo7 from '../pages/profile/photo/3.jpg';
+import Photo8 from '../pages/profile/photo/4.jpg';
+import Photo9 from '../pages/profile/photo/5.jpg';
+import Photo10 from '../pages/profile/photo/6.jpg';
 
 export const posts = [
     {id: 1, user: "irintsa_", photo: Photo1, liked: false},
@@ -18,10 +18,10 @@ export const posts = [
 ];
 
 export const photoAccount = [
-    {id: 1, photo: PhotoM},
-    {id: 2, photo: PhotoA},
-    {id: 3, photo: PhotoS},
-    {id: 4, photo: PhotoF},
-    {id: 5, photo: PhotoG},
-    {id: 6, photo: PhotoV},
+    {id: 1, photo: Photo5},
+    {id: 2, photo: Photo6},
+    {id: 3, photo: Photo7},
+    {id: 4, photo: Photo8},
+    {id: 5, photo: Photo9},
+    {id: 6, photo: Photo10}
 ]

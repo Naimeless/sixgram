@@ -5,9 +5,14 @@ import User from "./user/User.js";
 function Profile(){
     return(
         <div>
-            <Header />
+            <div>
+                <Header />
+            </div>
             
-            <User/>
+            <div className="page">
+                <User/>
+            </div>
+
         </div>
     )
 }
