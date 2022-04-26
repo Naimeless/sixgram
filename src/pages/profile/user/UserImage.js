@@ -1,15 +1,25 @@
-import React from "react";
-import User from "./User";
-import { photoAccount } from "../../../utils/constants";
+import React, { Component } from "react";
+import { UserInformation } from "./UserInformation";
+import { photoAccount } from "../../../utils/constants.js"
         
-function UserImage(){
-    const Photos = photoAccount.map((item)=>{
-        return(
-            <User key={item.id} 
-            photo={item.photo} 
-            />
-        );
-    });
-}
+export class UserImage extends Component{
+    state={
+        photoArr: photoAccount
+    };
 
-export default UserImage;
+    render(){
+        const photoPosts = this.state.photoArr.map((item)=>{
+            return(
+                <UserInformation key={item.id} 
+                photo={item.photo} 
+                />
+            );
+        });
+
+        return(
+            <>
+                {photoPosts}
+            </>
+        )
+    };
+}

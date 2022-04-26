@@ -1,38 +1,36 @@
-body{
-    background-color: rgb(250, 244, 248);
-}
-
 .page{
     display: flex;
     flex-direction: column;
 }
 
-.imgg{
+.tools{
+    margin-top: 0.5rem;
     display: flex;
     height: 1.5rem;
 }
 
-.hh{
+.user_name{
     display: flex;
     width: 18rem;
     justify-content: space-between;
 }
 
-.iii{
-    margin: 1rem;
-    width: 20rem;
-    height: 20rem;
+.image{
+    margin: 2rem;
+    display: flex;
+    width: 30rem;
+    height: 30rem;
 }
 
 .profile{
     display: flex;
     height: 29rem;
+    align-items: center;
     justify-content: center;
-    margin: 2rem;
     border-bottom: 2px solid rgb(207, 207, 207);
 }
 
-.photo{
+.avatar{
     display: flex;
     height: 25rem;
 }
@@ -50,19 +48,7 @@ body{
     background-color: white;
 }
 
-.photos{
-    margin: 1rem 0px 0.5rem 0px;
-    display: flex;
-    justify-content: center;
-}
-
 .lenta{
     display: flex;
     height: 13rem;
-}
-
-.images{
-    display: flex;
-    flex-direction: column;
-  
 }
