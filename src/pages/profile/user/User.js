@@ -27,7 +27,7 @@ function User(){
 
         </div>
 
-            <Row>
+            <Row style={{padding: "4rem"}}>
                 <UserImage/>
             </Row>
         </>
