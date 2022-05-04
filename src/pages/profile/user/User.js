@@ -19,7 +19,7 @@ function User(){
             <div className="information">
                 <div className="user">
                     <h2 className="user_name">Ventissa <FontAwesomeIcon className="tools" icon={faGear} /></h2>
-                    <p>Subscribes: 20</p>
+                    <p style={{fontFamili: 'system-ui'}}>Subscribes: 20</p>
                     <p>Subscriptions: 15</p>
                     <p>Description: "Into the wind!"</p>
                 </div>
@@ -27,7 +27,7 @@ function User(){
 
         </div>
 
-            <Row style={{padding: "4rem"}}>
+            <Row style={{justifyContent: 'center'}}>
                 <UserImage/>
             </Row>
         </>

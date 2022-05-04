@@ -11,6 +11,7 @@ import Photo9 from '../pages/profile/photo/5.jpg';
 import Photo10 from '../pages/profile/photo/6.jpg';
 import Photo11 from '../pages/profile/photo/7.jpg';
 import Photo12 from '../pages/profile/photo/8.jpg';
+import Photo13 from '../pages/profile/photo/9.jpg';
 
 export const posts = [
     {id: 1, user: "irintsa_", photo: Photo1, liked: false},
@@ -27,5 +28,6 @@ export const photoAccount = [
     {id: 5, photo: Photo9},
     {id: 6, photo: Photo10},
     {id: 7, photo: Photo11},
-    {id: 8, photo: Photo12}
+    {id: 8, photo: Photo12},
+    {id: 9, photo: Photo13}
 ]

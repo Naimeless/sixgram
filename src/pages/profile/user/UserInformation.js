@@ -7,7 +7,7 @@ export const UserInformation = ({
 }) => {
     return(
         
-        <Col style={ { width: '98rem', display: 'flex', padding: '1rem'} } xs={2} md={3} lg={3}>
+        <Col style={ { width: '98rem', display: 'flex', margin: '3rem'} } sm={6} xs={5} md={8} lg={3}>
             
             <img className="image" src={photo}/>
 
