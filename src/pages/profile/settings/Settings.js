@@ -56,7 +56,4 @@ function Settings(props) {
     );
   }
 
-
- console.log(ApiSettings) 
-
 export default Settings
