@@ -7,7 +7,7 @@ import { faGear } from '@fortawesome/free-solid-svg-icons';
 import { Row } from "react-bootstrap";
 
   
-function User(){
+function User(){м
 
     return(
         <>
