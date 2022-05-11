@@ -5,7 +5,7 @@ import './/Posts.css';
 function Posts(){
     
     return(
-        <div className="divNews">
+        <div className="div-news">
             <PostsList />
         </div>
     )

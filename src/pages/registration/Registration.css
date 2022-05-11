@@ -1,0 +1,20 @@
+.userName__div{
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+}
+
+    .userName__div-fields{
+        display: flex;
+        flex-direction: row;
+    }
+
+        .userName__div-fields-user{
+            width: 100%;
+        }
+
+    .userName__div-fields-button{
+        padding-top: 25px;
+        display: grid;
+    }    
+    

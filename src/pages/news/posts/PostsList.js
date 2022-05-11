@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import {PostsItem} from "./PostsItem.js";
 import {posts} from "../../../utils/constants.js";
+import { Col } from "react-bootstrap";
 
 export class PostsList extends Component{
     state ={
-        blogArr: posts
+        blogArr: posts,
     };
 
     likePost = pos => {
@@ -19,19 +20,23 @@ export class PostsList extends Component{
     render(){
         const blogPosts = this.state.blogArr.map((item, pos)=>{
             return(
-                <PostsItem key={item.id} 
-                user={item.user} 
+               <PostsItem key={item.id} 
+                user={item.user}
                 photo={item.photo} 
-                liked={item.liked} 
+                liked={item.liked}
+                date={item.date} 
                 likePost ={() => this.likePost(pos)}
+                hidePost={this.hidePost}
                 />
             );
         });
 
         return(
-            <div>
-                {blogPosts}
-            </div>
+            <>
+                <Col xs={6}>
+                    {blogPosts}
+                </Col>
+            </>
         )
     };
 }
