@@ -5,6 +5,7 @@ import "../registration/Registration.css";
 
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import {ApiAuthorization} from "../../api/ApiAuthorization"
 
 export const Authorization = () => {
 
@@ -58,9 +59,20 @@ export const Authorization = () => {
         }
     }
 
+    const onLogin = () => {
+        debugger
+        ApiAuthorization('http://192.168.0.122:85/api/v1/auth/login', {
+            "emailOrUserName": "string",
+            "password": "string"
+          })
+            .then((data) => {
+              console.log(data);
+            });
+    }
+
     return(
         <div className="authorization__div">
-            <Form className="authorization__block"> 
+            <Form className="authorization__block" onSubmit={onLogin}> 
                 <Form.Group className="authorization__block-style">
                     <Form.Group className="authorization__block-style-label">
                         <img className="authorization__block-style-label-view" src={ iconSixGram }/>
@@ -79,7 +91,7 @@ export const Authorization = () => {
                             <Form.Check type="checkbox" label="Check me out" />
                         </Form.Group>
                         <Link to = "/" className="userName__div-fields-button">
-                            <Button type="submit" disabled = {!formValue}>Sign in</Button>
+                            <Button type="submit" onClick={onLogin}>Sign in</Button>
                         </Link>
                     </div>
                     <div className="authorization__block-links">
