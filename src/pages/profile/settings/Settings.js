@@ -29,7 +29,7 @@ function Settings(props) {
                 <Form.Group controlId="formFile" className="mb-3">
                     <Form.Label>Avatar</Form.Label>
                     <Form.Control style={{paddingBottom: '2.2rem'}} type="file" />
-                    <Button id="avatarProfile" type="submit" style={{marginTop: '1rem'}} variant="primary">Save</Button>
+                    <Button id="avatarProfile" onClick={ApiSettings} type="submit" style={{marginTop: '1rem'}} variant="primary">Save</Button>
                 </Form.Group>
 
                 <Form.Group controlId="formFile" className="mb-3">
@@ -49,7 +49,10 @@ function Settings(props) {
         </Modal.Body>
         
         <Modal.Footer style={{justifyContent: 'space-between'}}>
-            <Button onClick={props.onHide}>Exit profile</Button>
+            <Button href="http://localhost:3000/authorization">
+                Exit profile 
+            </Button>
+
             <Button onClick={props.onHide}>Close</Button>
         </Modal.Footer>
     </Modal>
