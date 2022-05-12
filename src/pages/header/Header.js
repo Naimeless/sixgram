@@ -10,7 +10,7 @@ import { faComments } from '@fortawesome/free-regular-svg-icons';
 import { faBarChart } from '@fortawesome/free-regular-svg-icons';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
-import { Routes, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Row, Col } from "react-bootstrap";
 
 function NewsHeader(){

@@ -30,7 +30,7 @@ function User(){
 
         </div>
 
-            <Row style={{justifyContent: 'center'}}>
+            <Row style={{justifyContent: 'center', margin: '0'}}>
                 <UserImage/>
             </Row>
 
