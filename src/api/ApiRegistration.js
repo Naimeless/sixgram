@@ -1,4 +1,4 @@
-async function ApiSettings(url = '', data = {}) {
+async function ApiRegistration(url = '', data = {}) {
     const response = await fetch(url, {
         method: 'POST',
         mode: 'cors',
@@ -8,7 +8,7 @@ async function ApiSettings(url = '', data = {}) {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Methods': 'POST',
             'Access-Control-Allow-Headers': 'Content-Type',
-            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Origin': 'http://192.168.0.122:85',
             // 'Access-Control-Allow-Credentials': 'true'
         },
         redirect: 'follow',
@@ -18,5 +18,4 @@ async function ApiSettings(url = '', data = {}) {
         return await response.json();
     }
   
-  export default ApiSettings
-
+  export {ApiRegistration}

@@ -8,8 +8,7 @@ async function ApiAuthorization(url = '', data = {}) {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Methods': 'POST',
             'Access-Control-Allow-Headers': 'Content-Type',
-            'Access-Control-Allow-Origin': '*',
-            // 'Access-Control-Allow-Credentials': 'true'
+            'Access-Control-Allow-Origin': 'http://192.168.0.122:85',
         },
         redirect: 'follow',
         referrerPolicy: 'no-referrer',
