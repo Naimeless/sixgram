@@ -12,8 +12,12 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 import { Link } from 'react-router-dom'
 import { Row, Col } from "react-bootstrap";
+import UploadImages from "./UploadImages";
 
 function NewsHeader(){
+
+    const [modalShow, setModalShow] = React.useState(false);
+
     return(
         <Row className="block-header m-0">
             <Col xs={3}>
@@ -36,7 +40,8 @@ function NewsHeader(){
                         <FontAwesomeIcon className="block-icon__div-size" icon={faComments} />
                     </div>
                     <div className="block-icon__div">
-                        <FontAwesomeIcon className="block-icon__div-size" icon={faImages} />
+                        <FontAwesomeIcon className="block-icon__div-size" icon={faImages} onClick={() => setModalShow(true)}/>
+                        <UploadImages show={modalShow} onHide={() => setModalShow(false)}/>
                     </div>
                     <div className="block-icon__div">
                         <FontAwesomeIcon className="block-icon__div-size" icon={faBell} />

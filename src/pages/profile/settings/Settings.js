@@ -2,6 +2,18 @@ import React from "react";
 import { Modal, Button, Form } from 'react-bootstrap';
 import ApiSettings from '../../../api/profile/ApiSettings';
 
+
+const ChangeAv = () => {
+    debugger
+    ApiSettings('http://192.168.0.122:85/api/v1/user/changeavatar', {
+        "avatarId": ""
+    })
+        .then((data) => {
+        console.log(data);
+        });
+}
+
+
 function Settings(props) {
     return (
     <Modal
@@ -28,8 +40,8 @@ function Settings(props) {
 
                 <Form.Group controlId="formFile" className="mb-3">
                     <Form.Label>Avatar</Form.Label>
-                    <Form.Control style={{paddingBottom: '2.2rem'}} type="file" />
-                    <Button id="avatarProfile" onClick={ApiSettings} type="submit" style={{marginTop: '1rem'}} variant="primary">Save</Button>
+                    <Form.Control style={{paddingBottom: '2.2rem'}} type="file" onSubmit={ChangeAv}/>
+                    <Button id="avatarProfile" type="submit" style={{marginTop: '1rem'}} variant="primary">Save</Button>
                 </Form.Group>
 
                 <Form.Group controlId="formFile" className="mb-3">
