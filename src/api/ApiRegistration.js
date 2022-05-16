@@ -1,4 +1,4 @@
-async function ApiAuthorization(url = '', data = {}) {
+async function ApiRegistration(url = '', data = {}) {
     const response = await fetch(url, {
         method: 'POST',
         mode: 'cors',
@@ -9,6 +9,7 @@ async function ApiAuthorization(url = '', data = {}) {
             'Access-Control-Allow-Methods': 'POST',
             'Access-Control-Allow-Headers': 'Content-Type',
             'Access-Control-Allow-Origin': 'http://192.168.0.122:85',
+            // 'Access-Control-Allow-Credentials': 'true'
         },
         redirect: 'follow',
         referrerPolicy: 'no-referrer',
@@ -17,4 +18,4 @@ async function ApiAuthorization(url = '', data = {}) {
         return await response.json();
     }
   
-  export {ApiAuthorization}
+  export {ApiRegistration}
