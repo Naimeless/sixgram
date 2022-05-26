@@ -8,7 +8,7 @@ async function ApiSettings(url = '', data = {}) {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Methods': 'POST',
             'Access-Control-Allow-Headers': 'Content-Type',
-            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Origin': 'http://192.168.0.122:85',
             // 'Access-Control-Allow-Credentials': 'true'
         },
         redirect: 'follow',
@@ -20,3 +20,5 @@ async function ApiSettings(url = '', data = {}) {
   
   export default ApiSettings
 
+
+//  http://192.168.0.122:85/api/v1/user/{id}/post
