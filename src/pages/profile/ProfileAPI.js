@@ -1,12 +1,11 @@
-import React from "react";
 import ApiSettings from "../../api/profile/ApiSettings";
 
-export const ProfileAPI = {} => {
-    const onSubmit = (data) => {
-        ApiAuthorization('http://192.168.0.122:85/api/v1/auth/login', data)
+function ProfileAPI() {
+    const profilePhoto = (data) => {
+        ApiSettings('http://192.168.0.122:85/api/v1/user/{id}/post', data)
             .then((data) => {
             console.log(data);
-            setIsLoggenIn(true);
-            createTokenExpiration(data, true);
         });
+    }
 }
+export default ProfileAPI;
