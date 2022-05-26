@@ -12,7 +12,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 import { Link } from 'react-router-dom'
 import { Row, Col } from "react-bootstrap";
-import UploadImages from "./Upload image/UploadImages"
+import UploadImages from "../header/Upload image/UploadImages";
 
 function NewsHeader(){
 
