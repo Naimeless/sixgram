@@ -8,7 +8,7 @@ import { faGear } from '@fortawesome/free-solid-svg-icons';
 import { Row } from "react-bootstrap";
 
   
-function User(){
+const User = () => {
 
     const [modalShow, setModalShow] = React.useState(false);
 

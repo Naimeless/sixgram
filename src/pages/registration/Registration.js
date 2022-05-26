@@ -3,13 +3,15 @@ import "../authorization/Authorization.css";
 import "../registration/Registration.css"
 import iconSixGram from "../header/icon/font.png";
 import { ApiRegistration } from "../../api/ApiRegistration";
+import createTokenExpiration from "../../utils/createTokenExpiration";
+
 
 import { Form, Button, InputGroup } from "react-bootstrap";
 import { Controller, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
-function Registration(){
+function Registration({setIsLoggenIn}){
 
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ 
     const regAge = /^(?:1(?:00?|\d?)|[2-5]\d?|[6-9]\d?|0)$/
@@ -21,12 +23,12 @@ function Registration(){
         email: yup.string()
             .matches(re, 'Incorrect email.')
             .required('Email address'),
+        age: yup.string()
+            .matches(regAge, 'Your age.')
+            .required('Your age'),
         userName: yup.string()
-            .matches(/[a-zA-Z]/, 'Nick can only contain Latin letters.')
+            .matches(/[a-zA-Z]/, 'Nick can only contain latin letters.')
             .required('Your username'),
-        // age: yup.string()
-        //     .matches(regAge, 'Nick can only contain Latin letters.')
-        //     .required('Your age'),
       })
 
       const { handleSubmit, control, watch, formState: { errors }, setValue } = useForm({
@@ -36,7 +38,9 @@ function Registration(){
     const onSubmit = (data) => {
         ApiRegistration('http://192.168.0.122:85/api/v1/auth/register', data)
             .then((data) => {
-            console.log(data);
+            console.log(data)
+            setIsLoggenIn(true);
+            createTokenExpiration(data, true);
         });
     }
 
@@ -138,7 +142,7 @@ function Registration(){
                             />
                         </Form.Group>
                         <div className="registration__block-style-button">
-                            <Button variant="primary" type="submit">Sign up</Button>
+                            <Button type="submit">Sign up</Button>
                         </div>
                     </div>
                 </Form.Group>

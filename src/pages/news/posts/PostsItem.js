@@ -14,7 +14,7 @@ export const PostsItem =({
     photo,
     liked,
     date,
-    likePost
+    likePost,
 }) => {
 
     const heartFill = liked ? 'red' : 'black';

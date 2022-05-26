@@ -61,7 +61,7 @@ function Settings(props) {
         </Modal.Body>
         
         <Modal.Footer style={{justifyContent: 'space-between'}}>
-            <Button href="http://localhost:3000/authorization">
+            <Button>
                 Exit profile 
             </Button>
 

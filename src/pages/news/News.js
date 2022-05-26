@@ -4,6 +4,7 @@ import Posts from "../news/posts/Posts.js";
 
 
 function News(){
+
     return(
         <div>
             <div>
