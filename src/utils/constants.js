@@ -1,5 +1,3 @@
-import ProfileAPI from "../pages/profile/ProfileAPI";
-
 import Photo1 from "../pages/news/posts/photo/photo1.jpg";
 import Photo2 from "../pages/news/posts/photo/photo2.jpg";
 import Photo3 from "../pages/news/posts/photo/photo3.jpg";
@@ -14,7 +12,7 @@ export const posts = [
 ];
 
 export const photoAccount = [
-    {ProfileAPI},
+    {id: 1, Photo1},
 ];
 
 export const commentsUsers =[

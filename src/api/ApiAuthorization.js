@@ -8,12 +8,15 @@ async function ApiAuthorization(url = '', data = {}) {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Methods': 'POST',
             'Access-Control-Allow-Headers': 'Content-Type',
-            'Access-Control-Allow-Origin': 'http://192.168.0.122:85',
+            'Access-Control-Allow-Origin': 'http://192.168.0.122:85'
         },
         redirect: 'follow',
         referrerPolicy: 'no-referrer',
         body: JSON.stringify(data)
         });
+        if (!response.ok) {
+            throw new Error('error load posts')
+        }
         return await response.json();
     }
 

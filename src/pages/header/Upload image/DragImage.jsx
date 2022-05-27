@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import './UploadImage.css'
+import './UploadImage.css';
+import apiImageUpload from "../../../api/profile/apiImageUpload";
+import getToken from "../../../utils/getToken";
 
 const DragImage = () => {
-    const [drag, setDrag] = useState(false)
+    const [drag, setDrag] = useState(false);
+    const token = getToken();
 
     function dragStartHandler(e) {
         e.preventDefault()
@@ -14,16 +17,28 @@ const DragImage = () => {
         setDrag(false)
     }
 
-    function onDropHandler(e) {
+    async function imageUpload (formData) {
+        await apiImageUpload('http://192.168.0.122:91/api/v1/post', formData, token)
+        .then((data) => {debugger})
+    }
+   async function onDropHandler(e) {
         e.preventDefault()
-        let files = [...e.dataTransfer.files]
-        const formData = new FormData()
-        formData.append('file', files[0])
-        // formData.append('userId', 1)
-        // axios.post('url', formData, options)
+        let file = e.dataTransfer.files[0];
+        const formData = new FormData();
+        // const file = new File(files, {
+        //     type: "$binary"
+        // });
+        formData.append('image', file, file.name);
 
-        setDrag(false)
-        console.log(formData)
+        // const response = await fetch(`http://192.168.0.122:91/api/v1/post`, {
+        //     method: 'POST',
+        //     body: formData
+        // }).text();
+
+        // console.log("Ответ сервера: " + response);
+  
+        // return response;
+        imageUpload(formData)
     }
 
     return(

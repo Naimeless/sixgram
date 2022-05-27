@@ -3,14 +3,17 @@ import { Modal, Button, Form } from 'react-bootstrap';
 import ApiSettings from '../../../api/profile/ApiSettings';
 
 
-const ChangeAv = () => {
-    debugger
+const saveAvatar = () => {
     ApiSettings('http://192.168.0.122:85/api/v1/user/changeavatar', {
         "avatarId": ""
     })
         .then((data) => {
         console.log(data);
         });
+}
+
+const changeAvatar = (data) => {
+    debugger
 }
 
 
@@ -35,25 +38,25 @@ function Settings(props) {
                 <Form.Group controlId="formFile" className="mb-3">
                     <Form.Label>User name</Form.Label>
                     <Form.Control placeholder="Write new user name" type="text" />
-                    <Button type="submit" style={{marginTop: '1rem'}} variant="primary">Save</Button>
+                    <Button style={{marginTop: '1rem'}} variant="primary">Save</Button>
                 </Form.Group>
 
                 <Form.Group controlId="formFile" className="mb-3">
                     <Form.Label>Avatar</Form.Label>
-                    <Form.Control style={{paddingBottom: '2.2rem'}} type="file" onSubmit={ChangeAv}/>
-                    <Button id="avatarProfile" type="submit" style={{marginTop: '1rem'}} variant="primary">Save</Button>
+                    <Form.Control style={{paddingBottom: '2.2rem'}} type="file" onChange={changeAvatar}/>
+                    <Button id="avatarProfile" style={{marginTop: '1rem'}}  onClick={saveAvatar} variant="primary">Save</Button>
                 </Form.Group>
 
                 <Form.Group controlId="formFile" className="mb-3">
                     <Form.Label>Description</Form.Label>
                     <Form.Control placeholder="Write new description" type="text"/>
-                    <Button type="submit" style={{marginTop: '1rem'}} variant="primary">Save</Button>
+                    <Button style={{marginTop: '1rem'}} variant="primary">Save</Button>
                 </Form.Group>
 
                 <Form.Group controlId="formFile" className="mb-3">
                     <Form.Label>Password</Form.Label>
                     <Form.Control placeholder="Write new password" type="password"/>
-                    <Button type="submit" style={{marginTop: '1rem'}} variant="primary">Save</Button>
+                    <Button style={{marginTop: '1rem'}} variant="primary">Save</Button>
                 </Form.Group>
 
             </Form>
