@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import './UploadImage.css';
 import apiImageUpload from "../../../api/profile/apiImageUpload";
 import getToken from "../../../utils/getToken";
@@ -7,6 +8,9 @@ const url = 'http://192.168.0.122:90/api/v1/task/uploadfile';
 
 const DragImage = () => {
     const [drag, setDrag] = useState(false);
+    const [file, setFile] = useState();
+    const [fileName, setFileName] = useState();
+
     const token = getToken();
 
     function dragStartHandler(e) {
@@ -23,48 +27,34 @@ const DragImage = () => {
         await apiImageUpload(url, formData, token)
         .then((data) => {debugger})
     }
-   async function onDropHandler(e) {
-        e.preventDefault()
-        const formData = new FormData();
-        const file = e.dataTransfer.files[0];
-        // const file = new File(files, {
-        //     type: "$binary"
-        // });
-        formData.append('file', file, file.name);
-        imageUpload(formData);
-        console.log(formData.getAll('file'));    
+    const saveFile = (e) => {
+        e.preventDefault();
+        console.log(e.target.files[0]);
+        setFile(e.target.files[0]);
+        setFileName(e.target.files[0].name);
+    };
 
-        try{
-            const response = await fetch(url, {
-                method: 'POST',
-                body: formData
-            });
-            const result = await response.json();
-            console.log("Успешно: ", JSON.stringify(result));
-        } catch(error){
-            console.error('Ошибка: ', error)
+        const uploadFile = async (e) => {
+            console.log(file);
+            const formData = new FormData();
+            formData.append('formFile', file);
+            formData.append('fileName', fileName);
+            imageUpload(formData);
+
+            try{
+                const res = await axios(url, formData);
+                console.log(res);
+            } catch(ex){
+                console.error(ex)
+            }
         }
-
-    }
 
     return(
         <div className='app'>
-            {drag
-                ?<div
-                    className='drop-area'
-                    onDragStart={e => dragStartHandler(e)}
-                    onDragLeave={e => dragLeaveHandler(e)}
-                    onDragOver={e => dragStartHandler(e)}
-                    onDrop={e => onDropHandler(e)}
-                >Отпустите файлы, чтобы загрузить их</div>
-                :<div style={{padding: '4rem'}}
-                    onDragStart={e => dragStartHandler(e)}
-                    onDragLeave={e => dragLeaveHandler(e)}
-                    onDragOver={e => dragStartHandler(e)}
-                >Перетащите файлы, чтобы загрузить их</div>
-            }
+           <input type="file" onChange={saveFile}></input>
+           <input type="button" value="upload" onClick={uploadFile}></input>
         </div>
     )
-}
+};
 
 export default DragImage
