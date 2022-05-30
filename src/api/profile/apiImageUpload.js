@@ -8,7 +8,7 @@ async function apiImageUpload(url = '', data ={}, token) {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Methods': 'POST',
             'Access-Control-Allow-Headers': 'Content-Type',
-            'Access-Control-Allow-Origin': 'http://192.168.0.122:91',
+            'Access-Control-Allow-Origin': 'http://192.168.0.122:90',
             'Authorization': 'Bearer ' + token
             // 'Access-Control-Allow-Credentials': 'true'
         },

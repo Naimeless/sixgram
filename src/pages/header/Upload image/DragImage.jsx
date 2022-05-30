@@ -3,6 +3,8 @@ import './UploadImage.css';
 import apiImageUpload from "../../../api/profile/apiImageUpload";
 import getToken from "../../../utils/getToken";
 
+const url = 'http://192.168.0.122:90/api/v1/task/uploadfile';
+
 const DragImage = () => {
     const [drag, setDrag] = useState(false);
     const token = getToken();
@@ -18,27 +20,31 @@ const DragImage = () => {
     }
 
     async function imageUpload (formData) {
-        await apiImageUpload('http://192.168.0.122:91/api/v1/post', formData, token)
+        await apiImageUpload(url, formData, token)
         .then((data) => {debugger})
     }
    async function onDropHandler(e) {
         e.preventDefault()
-        let file = e.dataTransfer.files[0];
         const formData = new FormData();
+        const file = e.dataTransfer.files[0];
         // const file = new File(files, {
         //     type: "$binary"
         // });
-        formData.append('image', file, file.name);
+        formData.append('file', file, file.name);
+        imageUpload(formData);
+        console.log(formData.getAll('file'));    
 
-        // const response = await fetch(`http://192.168.0.122:91/api/v1/post`, {
-        //     method: 'POST',
-        //     body: formData
-        // }).text();
+        try{
+            const response = await fetch(url, {
+                method: 'POST',
+                body: formData
+            });
+            const result = await response.json();
+            console.log("Успешно: ", JSON.stringify(result));
+        } catch(error){
+            console.error('Ошибка: ', error)
+        }
 
-        // console.log("Ответ сервера: " + response);
-  
-        // return response;
-        imageUpload(formData)
     }
 
     return(
