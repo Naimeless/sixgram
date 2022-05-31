@@ -1,12 +1,7 @@
-const setCookie = (name, value, expiration) => {
-  let expires = "";
-  if (expiration) {
-    const date = new Date(expiration);
-    expires = "; expires=" + date.toUTCString();
+const setCookie = (name, value) => {
+  
+    // document.cookie = name + "=" + (value || "")  + expires + "; path=/ ;domain="+DOMAIN;
+    document.cookie = name + "=" + (value || "") + "; path=/ ;domain=localhost";
   }
-
-  // document.cookie = name + "=" + (value || "")  + expires + "; path=/ ;domain="+DOMAIN;
-  document.cookie = name + "=" + (value || "")  + "max-age=3600" + "; path=/ ;domain=localhost";
-}
-
-export default setCookie
+  
+  export default setCookie

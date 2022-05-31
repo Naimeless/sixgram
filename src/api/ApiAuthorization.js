@@ -16,6 +16,11 @@ async function ApiAuthorization(url = '', data = {}) {
         referrerPolicy: 'no-referrer',
         body: JSON.stringify(data)
         });
+        
+        if (!response.ok) {
+            throw new Error(response.title || 'INVALID USERNAME OR PASSWORD!');
+        }
+    
         return await response.json();
     }
 

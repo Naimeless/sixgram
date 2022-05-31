@@ -15,6 +15,7 @@ const ChangeAv = () => {
 
 
 function Settings(props) {
+
     return (
     <Modal
     {...props}
@@ -61,10 +62,6 @@ function Settings(props) {
         </Modal.Body>
         
         <Modal.Footer style={{justifyContent: 'space-between'}}>
-            <Button>
-                Exit profile 
-            </Button>
-
             <Button onClick={props.onHide}>Close</Button>
         </Modal.Footer>
     </Modal>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Suspense} from "react";
 import Header from "../header/Header.js";
 import Posts from "../news/posts/Posts.js";
 

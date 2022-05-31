@@ -7,12 +7,21 @@ import Registration from "./pages/registration/Registration";
 
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import getToken from './utils/getToken';
+import Spinner from './utils/Spinner';
 
 
 function App() {
 
-  const [isLoggenIn, setIsLoggenIn] = useState(getToken());
+  const [isLoggenIn, setIsLoggenIn] = useState(false);
   const navigate = useNavigate();
+  const token = getToken();
+
+  useEffect(() =>{
+    if(token){
+      setIsLoggenIn(true)
+      return;
+    }
+  }, [])
 
   useEffect(()=>{
     if (!isLoggenIn){
@@ -24,10 +33,10 @@ function App() {
 
   return (
     <Routes>
-        <Route path="/authorization" element={<Authorization setIsLoggenIn={(value) => setIsLoggenIn(value)} />} />
-        <Route path="/registration" element={<Registration setIsLoggenIn={setIsLoggenIn}/>} />
+        <Route path="/authorization" element={<Authorization setIsLoggenIn={(value) => setIsLoggenIn(value)}/> } />
+        <Route path="/registration" element={<Registration setIsLoggenIn={(value) => setIsLoggenIn(value)}/>} />
         <Route path="/" element={<News />} />
-        <Route path="/profile" element={<Profile />}  />
+        <Route path="/profile" element={<Profile/>}  />
     </Routes>
   );
 }

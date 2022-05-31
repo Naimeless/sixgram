@@ -10,6 +10,7 @@ import * as yup from 'yup';
 import createTokenExpiration from "../../utils/createTokenExpiration";
 
 import { Link } from "react-router-dom";
+import setCookie from "../../utils/setCookie";
 
 export const Authorization = ({setIsLoggenIn}) => {
 
@@ -30,11 +31,16 @@ export const Authorization = ({setIsLoggenIn}) => {
 
     const onSubmit = (data) => {
         ApiAuthorization('http://192.168.0.122:85/api/v1/auth/login', data)
-            .then((data) => {
-            console.log(data);
-            setIsLoggenIn(true);
-            createTokenExpiration(data, true);
-        });
+            .then((res) => {
+                console.log(res);
+                setCookie('nameUser', data.emailOrUserName)
+                createTokenExpiration(res, true);
+                setIsLoggenIn(true);
+                
+        })
+        .catch((e) => {
+            alert(e.message)
+        })
     }
 
     return(
