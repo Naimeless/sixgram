@@ -32,7 +32,7 @@ const User = () => {
 
         </div>
 
-            <Row style={{justifyContent: 'center', margin: "0"}}>
+            <Row style={{justifyContent: 'center', margin: '0'}}>
                 <UserImage/>
             </Row>
 

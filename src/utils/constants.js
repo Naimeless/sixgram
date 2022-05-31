@@ -13,6 +13,7 @@ import Photo11 from '../pages/profile/photo/7.jpg';
 import Photo12 from '../pages/profile/photo/8.jpg';
 import Photo13 from '../pages/profile/photo/9.jpg';
 
+
 export const posts = [
     {id: 1, user: "irintsa_", photo: Photo1, liked: false, date: "April 20, 2022"},
     {id: 2, user: "zloi_neadekvat", photo: Photo2, liked: false, date: "April 17, 2022"},
