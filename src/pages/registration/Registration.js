@@ -4,6 +4,7 @@ import "../registration/Registration.css"
 import iconSixGram from "../header/icon/font.png";
 import { ApiRegistration } from "../../api/ApiRegistration";
 import createTokenExpiration from "../../utils/createTokenExpiration";
+import setCookie from "../../utils/setCookie";
 
 
 import { Form, Button, InputGroup } from "react-bootstrap";
@@ -37,11 +38,15 @@ function Registration({setIsLoggenIn}){
 
     const onSubmit = (data) => {
         ApiRegistration('http://192.168.0.122:85/api/v1/auth/register', data)
-            .then((data) => {
-            console.log(data)
-            setIsLoggenIn(true);
-            createTokenExpiration(data, true);
-        });
+            .then((res) => {
+                console.log(res)
+                setCookie('nameUser', data.userName)
+                createTokenExpiration(res, true);
+                setIsLoggenIn(true);
+        })
+        .catch((e) => {
+            alert(e.message)
+        })
     }
 
     return(

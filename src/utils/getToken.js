@@ -1,8 +1,7 @@
-import { Cookies } from 'react-cookie'
+import getCookie from './getCookie'
 
 const getToken = () => {
-  const cookies = new Cookies()
-  return cookies.get('token')
+  return getCookie('token')
 }
 
 export default getToken
