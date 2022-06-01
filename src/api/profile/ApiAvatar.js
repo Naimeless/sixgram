@@ -1,4 +1,4 @@
-async function ApiSettings(url = '', token) {
+async function ApiAvatar(url = '', token) {
     const response = await fetch(url, {
         method: 'GET',
         mode: 'cors',
@@ -18,7 +18,4 @@ async function ApiSettings(url = '', token) {
         return await response.json();
     }
   
-  export default ApiSettings
-
-
-//  http://192.168.0.122:85/api/v1/user/{id}/post
+export default ApiAvatar

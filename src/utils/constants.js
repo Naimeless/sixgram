@@ -22,7 +22,7 @@ export const posts = [
 ];
 
 export const photoAccount = [
-    {id: 1, photo: Photo5},
+    {id: 1, photo: Photo5}, //?
     {id: 2, photo: Photo6},
     {id: 3, photo: Photo7},
     {id: 4, photo: Photo8},

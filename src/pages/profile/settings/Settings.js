@@ -1,10 +1,10 @@
 import React from "react";
 import { Modal, Button, Form } from 'react-bootstrap';
-import ApiSettings from '../../../api/profile/ApiSettings';
+import ApiAvatar from '../../../api/profile/ApiAvatar';
 
 
 const saveAvatar = () => {
-    ApiSettings('http://192.168.0.122:85/api/v1/user/changeavatar', {
+    ApiAvatar('http://192.168.0.122:85/api/v1/user/changeavatar', {
         "avatarId": ""
     })
         .then((data) => {

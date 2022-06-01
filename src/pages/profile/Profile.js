@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../header/Header.js";
 import User from "./user/User.js";
-import ApiSettings from "../../api/profile/ApiSettings.js";
+import ApiAvatar from "../../api/profile/ApiAvatar.js";
 import getToken from "../../utils/getToken.js";
 
 const Profile = () => {
@@ -9,7 +9,7 @@ const Profile = () => {
     const token = getToken();
     const [posts, setPosts] = useState([]);
     const getUserPosts = () => {
-            ApiSettings(`http://192.168.0.122:91/api/v1/user/${userId}/post`, token)
+            ApiAvatar(`http://192.168.0.122:91/api/v1/user/${userId}/post`, token)
                 .then((data) => {
                     setPosts(data.posts);
             });}

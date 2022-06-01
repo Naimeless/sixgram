@@ -6,6 +6,8 @@ import getToken from "../../../utils/getToken";
 
 const url = 'http://192.168.0.122:91/api/v1/post';
 
+const formData = new FormData();
+
 const DragImage = () => {
     const [drag, setDrag] = useState(false);
     const token = getToken();
@@ -27,7 +29,6 @@ const DragImage = () => {
 
     async function onDropHandler(e) {
         e.preventDefault()
-            const formData = new FormData();
             const file = e.dataTransfer.files[0];
             formData.append('file', file, file.name);
             console.log(formData.getAll('file'));   
@@ -38,7 +39,10 @@ const DragImage = () => {
             }
             reader.readAsDataURL(file);
         }
+    }
 
+    async function onClicked(e) {
+        e.preventDefault();
             try{
                 const response = await fetch(url, {
                     method: 'POST',
@@ -52,11 +56,11 @@ const DragImage = () => {
             } catch(error){
                 console.error('Ошибка: ', error)
             }
-        }
+
+       }
 
     return(
         <div className='app'>
-        <Button variant="primary" style={{marginTop: "18px"}}>Send</Button>
         {drag
             ?<div
                 className='drop-area'
@@ -72,7 +76,12 @@ const DragImage = () => {
             >Drag and drop files to upload them
             </div>
         }
-        {imageSrc && <img src={imageSrc} className="imageSrc"/>}
+        {imageSrc ? 
+        <>
+        <img src={imageSrc} className="imageSrc"/>
+        <Button variant="primary" onClick={onClicked} style={{marginTop: "18px", width: '33rem', backgroundColor: "grey", borderColor: 'grey', justifyContent: 'center'}}>Send</Button>
+        </>
+        : <div/>}
     </div>
     )
 };
