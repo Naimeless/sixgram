@@ -1,21 +1,7 @@
 import React from "react";
 import { Modal, Button, Form } from 'react-bootstrap';
-import ApiAvatar from '../../../api/profile/ApiAvatar';
-
-
-const saveAvatar = () => {
-    ApiAvatar('http://192.168.0.122:85/api/v1/user/changeavatar', {
-        "avatarId": ""
-    })
-        .then((data) => {
-        console.log(data);
-        });
-}
-
-const changeAvatar = (data) => {
-    debugger
-}
-
+// import avatarSave from "./avatarSave";
+// import onClicked from "../../../utils/onClicked";
 
 function Settings(props) {
 
@@ -42,10 +28,10 @@ function Settings(props) {
                     <Button style={{marginTop: '1rem'}} variant="primary">Save</Button>
                 </Form.Group>
 
-                <Form.Group controlId="formFile" className="mb-3">
+                <Form.Group controlId="formFile" className="mb-3" method="PATCH">
                     <Form.Label>Avatar</Form.Label>
-                    <Form.Control style={{paddingBottom: '2.2rem'}} type="file" onChange={changeAvatar}/>
-                    <Button id="avatarProfile" style={{marginTop: '1rem'}}  onClick={saveAvatar} variant="primary">Save</Button>
+                    <Form.Control style={{paddingBottom: '2.2rem'}} type="file"/>
+                    <Button id="avatarProfile" style={{marginTop: '1rem'}}   variant="primary">Save</Button>
                 </Form.Group>
 
                 <Form.Group controlId="formFile" className="mb-3">
