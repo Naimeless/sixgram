@@ -3,7 +3,6 @@ import getToken from './getToken';
 
 const getIdUser = () => {
     const token = getToken();
-    console.log(getResponse())
     async function getResponse() {
         let response = await fetch(`http://192.168.0.122:85/api/v1/user/${token}`);
         let content = await response.JSON()

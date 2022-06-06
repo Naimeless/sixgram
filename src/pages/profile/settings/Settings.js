@@ -1,10 +1,9 @@
 import React from "react";
 import { Modal, Button, Form } from 'react-bootstrap';
-// import avatarSave from "./avatarSave";
+import avatarSave from "./avatarSave";
 // import onClicked from "../../../utils/onClicked";
 
 function Settings(props) {
-
     return (
     <Modal
     {...props}
@@ -31,7 +30,7 @@ function Settings(props) {
                 <Form.Group controlId="formFile" className="mb-3" method="PATCH">
                     <Form.Label>Avatar</Form.Label>
                     <Form.Control style={{paddingBottom: '2.2rem'}} type="file"/>
-                    <Button id="avatarProfile" style={{marginTop: '1rem'}}   variant="primary">Save</Button>
+                    <Button id="avatarProfile" style={{marginTop: '1rem'}} variant="primary" onClick={avatarSave}>Save</Button>
                 </Form.Group>
 
                 <Form.Group controlId="formFile" className="mb-3">

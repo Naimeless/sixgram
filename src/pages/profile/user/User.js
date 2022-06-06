@@ -5,17 +5,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGear } from '@fortawesome/free-solid-svg-icons';
 import { Row } from "react-bootstrap";
 import getCookie from "../../../utils/getCookie";
-import imageSrc from "../../../utils/imageSrc";
-    const User = () => {
+import avatarSave from "../settings/avatarSave";
+    
+const User = () => {
 
-        const [modalShow, setModalShow] = React.useState(false);
-        const nameUser = getCookie('nameUser');
+    const [modalShow, setModalShow] = React.useState(false);
+    const nameUser = getCookie('nameUser');
+    // const avatarUser = avatarSave();
 
-        return(
-            <>
+    return(
+        <>
             <div className="profile">
                 <div className="avatar">
-                    {imageSrc && <img src={imageSrc} className="imageSrc"/>}
+                    {/* {avatarUser} */}
                 </div>
 
                 <div className="information">
@@ -29,18 +31,18 @@ import imageSrc from "../../../utils/imageSrc";
 
             </div>
 
-                <Row style={{justifyContent: 'center', margin: '0'}}>
-                    <UserImage/>
-                </Row>
+            <Row style={{justifyContent: 'center', margin: '0'}}>
+                <UserImage/>
+            </Row>
 
-                <>
-            <Settings
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-            />
-        </>
+            <>
+                <Settings
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                />
             </>
-        )
-    }
+        </>
+    )
+}
 
 export default User
