@@ -32,7 +32,6 @@
 .avatar{
     display: flex;
     height: 25rem;
-    border-style: double;
 }
 
 .information{

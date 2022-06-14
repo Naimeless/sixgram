@@ -1,4 +1,4 @@
-async function userApi(url = '', token) {
+async function apiTask(url = '', token) {
     const response = await fetch(url, {
         method: 'GET',
         mode: 'cors',
@@ -8,7 +8,7 @@ async function userApi(url = '', token) {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Methods': 'GET',
             'Access-Control-Allow-Headers': 'Content-Type',
-            'Access-Control-Allow-Origin': 'http://192.168.0.122:85',
+            'Access-Control-Allow-Origin': 'http://192.168.0.122:90',
             'Authorization': 'Bearer ' + token
             // 'Access-Control-Allow-Credentials': 'true'
         },
@@ -18,7 +18,7 @@ async function userApi(url = '', token) {
             if (!response.ok) {
                 throw new Error('error load posts')
             }
-            return await response.json();
+            return await response.arrayBuffer();
         }
   
-export default userApi
+export default apiTask
