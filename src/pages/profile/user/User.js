@@ -8,7 +8,6 @@ import getCookie from "../../../utils/getCookie";
 import getToken from "../../../utils/getToken";
 import userApi from "../../../api/profile/userApi";
 import apiTask from "../../../api/profile/apiTask";
-import { getImage } from '../../../utils/getImage'
 
 const url = `http://192.168.0.122:85/api/v1/user/getuser`;
 const User = () => {
@@ -34,9 +33,6 @@ const User = () => {
     const uploadAvatar = async () => {
        await apiTask(urlTask, token)
        .then((res) => {
-        // const result = getImage(res);
-        // debugger
-        // setSrcImage(result);
         const byteArray = new Uint8Array(res)
         const blob = new Blob([byteArray])
         const fileReaderInstance = new FileReader()
