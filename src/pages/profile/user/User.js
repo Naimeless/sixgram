@@ -13,7 +13,7 @@ const url = `http://192.168.0.122:85/api/v1/user/getuser`;
 const User = () => {
     const token = getToken();
     const [avatarId, setavatarId] = useState();
-    const [srcImage, setSrcImage] = useState('');
+    const [srcImage, setSrcImage] = useState('../photo/avatar.png');
     const [isNeedUploadAvatar, setIsNeedUploadAvatar] = useState(false);
 
     const getavatarId = async () => {
